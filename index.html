@@ -435,6 +435,165 @@
             color: var(--cyan);
         }
 
+        /* ======================== VS CODE BACKGROUND ======================== */
+        .vscode-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+            opacity: 0.22;
+            pointer-events: none;
+        }
+
+        .vscode-editor {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #1e1e1e;
+            border-radius: 0;
+            border: none;
+            overflow: hidden;
+            font-family: 'Consolas', 'Courier New', monospace;
+        }
+
+        .vscode-titlebar {
+            background: #323233;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.72rem;
+            color: #999;
+        }
+
+        .vscode-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .vscode-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+        }
+
+        .vscode-dot.red { background: #ff5f57; }
+        .vscode-dot.yellow { background: #febc2e; }
+        .vscode-dot.green { background: #28c840; }
+
+        .vscode-tabs {
+            background: #252526;
+            display: flex;
+            border-bottom: 1px solid #1e1e1e;
+        }
+
+        .vscode-tab {
+            padding: 7px 18px;
+            font-size: 0.73rem;
+            color: #888;
+            border-right: 1px solid #1e1e1e;
+        }
+
+        .vscode-tab.active {
+            background: #1e1e1e;
+            color: #ccc;
+            border-top: 2px solid #007acc;
+        }
+
+        .vscode-body {
+            display: flex;
+            height: calc(100% - 65px);
+            overflow: hidden;
+        }
+
+        .vscode-sidebar {
+            width: 48px;
+            background: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 12px;
+            gap: 18px;
+        }
+
+        .vscode-sidebar-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 4px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        .vscode-sidebar-icon.active-icon {
+            background: rgba(0, 122, 204, 0.3);
+            border-left: 2px solid #007acc;
+        }
+
+        .vscode-code-area {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .vscode-line-numbers {
+            padding: 12px 8px 12px 14px;
+            text-align: right;
+            color: #555;
+            font-size: 0.78rem;
+            line-height: 1.75;
+            user-select: none;
+            min-width: 40px;
+        }
+
+        .vscode-code {
+            flex: 1;
+            padding: 12px 16px;
+            font-size: 0.78rem;
+            line-height: 1.75;
+            color: #d4d4d4;
+            white-space: pre;
+            animation: codeScroll 40s linear infinite;
+        }
+
+        @keyframes codeScroll {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-50%); }
+        }
+
+        .vscode-code .kw { color: #c586c0; }
+        .vscode-code .fn { color: #dcdcaa; }
+        .vscode-code .str { color: #ce9178; }
+        .vscode-code .num { color: #b5cea8; }
+        .vscode-code .cls { color: #4ec9b0; }
+        .vscode-code .imp { color: #569cd6; }
+        .vscode-code .cm { color: #6a9955; }
+        .vscode-code .var { color: #9cdcfe; }
+        .vscode-code .op { color: #d4d4d4; }
+        .vscode-code .par { color: #ffd700; }
+        .vscode-code .dec { color: #dcdcaa; }
+
+        .vscode-statusbar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: #007acc;
+            padding: 3px 14px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.68rem;
+            color: #fff;
+            z-index: 1;
+        }
+
+        @media (max-width: 768px) {
+            .vscode-sidebar { display: none; }
+        }
+
         /* ======================== ABOUT SECTION ======================== */
         .about-grid {
             display: grid;
@@ -1241,6 +1400,41 @@
 
     <!-- ====================== HERO SECTION ====================== -->
     <section class="hero" id="hero">
+        <!-- VS Code ML Background -->
+        <div class="vscode-bg">
+            <div class="vscode-editor">
+                <div class="vscode-titlebar">
+                    <div class="vscode-dots">
+                        <span class="vscode-dot red"></span>
+                        <span class="vscode-dot yellow"></span>
+                        <span class="vscode-dot green"></span>
+                    </div>
+                    <span>train_model.py - ml_project - Visual Studio Code</span>
+                </div>
+                <div class="vscode-tabs">
+                    <div class="vscode-tab active">train_model.py</div>
+                    <div class="vscode-tab">preprocessing.py</div>
+                    <div class="vscode-tab">config.yaml</div>
+                </div>
+                <div class="vscode-body">
+                    <div class="vscode-sidebar">
+                        <div class="vscode-sidebar-icon active-icon"></div>
+                        <div class="vscode-sidebar-icon"></div>
+                        <div class="vscode-sidebar-icon"></div>
+                        <div class="vscode-sidebar-icon"></div>
+                        <div class="vscode-sidebar-icon"></div>
+                    </div>
+                    <div class="vscode-code-area">
+                        <div class="vscode-line-numbers" id="lineNumbers"></div>
+                        <div class="vscode-code" id="codeContent"></div>
+                    </div>
+                </div>
+                <div class="vscode-statusbar">
+                    <span>Python 3.11.4 &nbsp; UTF-8 &nbsp; LF</span>
+                    <span>Ln 42, Col 18 &nbsp; Spaces: 4</span>
+                </div>
+            </div>
+        </div>
         <div class="hero-content">
             <div class="hero-badge">AI &amp; Data Science Engineer</div>
             <h1>
@@ -1909,6 +2103,140 @@
 
             init();
             animate();
+        })();
+
+        // ======================== VS CODE ML CODE BACKGROUND ========================
+        (function() {
+            const codeLines = [
+                '<span class="cm"># ============================================</span>',
+                '<span class="cm"># Neural Network Training Pipeline</span>',
+                '<span class="cm"># Author: EL MAHDI ATMANI</span>',
+                '<span class="cm"># ============================================</span>',
+                '',
+                '<span class="imp">import</span> <span class="cls">torch</span>',
+                '<span class="imp">import</span> <span class="cls">torch.nn</span> <span class="imp">as</span> <span class="var">nn</span>',
+                '<span class="imp">import</span> <span class="cls">torch.optim</span> <span class="imp">as</span> <span class="var">optim</span>',
+                '<span class="imp">from</span> <span class="cls">torch.utils.data</span> <span class="imp">import</span> <span class="cls">DataLoader</span>',
+                '<span class="imp">import</span> <span class="cls">numpy</span> <span class="imp">as</span> <span class="var">np</span>',
+                '<span class="imp">import</span> <span class="cls">pandas</span> <span class="imp">as</span> <span class="var">pd</span>',
+                '<span class="imp">from</span> <span class="cls">sklearn.model_selection</span> <span class="imp">import</span> <span class="fn">train_test_split</span>',
+                '<span class="imp">from</span> <span class="cls">sklearn.preprocessing</span> <span class="imp">import</span> <span class="cls">StandardScaler</span>',
+                '<span class="imp">from</span> <span class="cls">transformers</span> <span class="imp">import</span> <span class="cls">AutoTokenizer</span>, <span class="cls">AutoModel</span>',
+                '<span class="imp">import</span> <span class="cls">matplotlib.pyplot</span> <span class="imp">as</span> <span class="var">plt</span>',
+                '',
+                '',
+                '<span class="cm"># Load and preprocess dataset</span>',
+                '<span class="var">df</span> <span class="op">=</span> <span class="var">pd</span>.<span class="fn">read_csv</span><span class="par">(</span><span class="str">"data/diplomatic_corpus.csv"</span><span class="par">)</span>',
+                '<span class="var">X</span> <span class="op">=</span> <span class="var">df</span>.<span class="fn">drop</span><span class="par">(</span><span class="str">"sentiment"</span>, <span class="var">axis</span>=<span class="num">1</span><span class="par">)</span>.<span class="var">values</span>',
+                '<span class="var">y</span> <span class="op">=</span> <span class="var">df</span>[<span class="str">"sentiment"</span>].<span class="var">values</span>',
+                '',
+                '<span class="var">scaler</span> <span class="op">=</span> <span class="cls">StandardScaler</span><span class="par">()</span>',
+                '<span class="var">X_scaled</span> <span class="op">=</span> <span class="var">scaler</span>.<span class="fn">fit_transform</span><span class="par">(</span><span class="var">X</span><span class="par">)</span>',
+                '',
+                '<span class="var">X_train</span>, <span class="var">X_test</span>, <span class="var">y_train</span>, <span class="var">y_test</span> <span class="op">=</span> <span class="fn">train_test_split</span><span class="par">(</span>',
+                '    <span class="var">X_scaled</span>, <span class="var">y</span>, <span class="var">test_size</span>=<span class="num">0.2</span>, <span class="var">random_state</span>=<span class="num">42</span>',
+                '<span class="par">)</span>',
+                '',
+                '',
+                '<span class="cm"># Define Neural Network Architecture</span>',
+                '<span class="kw">class</span> <span class="cls">SentimentClassifier</span><span class="par">(</span><span class="cls">nn.Module</span><span class="par">)</span>:',
+                '    <span class="kw">def</span> <span class="fn">__init__</span><span class="par">(</span><span class="var">self</span>, <span class="var">input_dim</span>, <span class="var">hidden_dim</span>, <span class="var">output_dim</span><span class="par">)</span>:',
+                '        <span class="fn">super</span><span class="par">()</span>.<span class="fn">__init__</span><span class="par">()</span>',
+                '        <span class="var">self</span>.<span class="var">layer1</span> <span class="op">=</span> <span class="cls">nn.Linear</span><span class="par">(</span><span class="var">input_dim</span>, <span class="var">hidden_dim</span><span class="par">)</span>',
+                '        <span class="var">self</span>.<span class="var">bn1</span> <span class="op">=</span> <span class="cls">nn.BatchNorm1d</span><span class="par">(</span><span class="var">hidden_dim</span><span class="par">)</span>',
+                '        <span class="var">self</span>.<span class="var">relu</span> <span class="op">=</span> <span class="cls">nn.ReLU</span><span class="par">()</span>',
+                '        <span class="var">self</span>.<span class="var">dropout</span> <span class="op">=</span> <span class="cls">nn.Dropout</span><span class="par">(</span><span class="num">0.3</span><span class="par">)</span>',
+                '        <span class="var">self</span>.<span class="var">layer2</span> <span class="op">=</span> <span class="cls">nn.Linear</span><span class="par">(</span><span class="var">hidden_dim</span>, <span class="var">hidden_dim</span> // <span class="num">2</span><span class="par">)</span>',
+                '        <span class="var">self</span>.<span class="var">layer3</span> <span class="op">=</span> <span class="cls">nn.Linear</span><span class="par">(</span><span class="var">hidden_dim</span> // <span class="num">2</span>, <span class="var">output_dim</span><span class="par">)</span>',
+                '        <span class="var">self</span>.<span class="var">softmax</span> <span class="op">=</span> <span class="cls">nn.Softmax</span><span class="par">(</span><span class="var">dim</span>=<span class="num">1</span><span class="par">)</span>',
+                '',
+                '    <span class="kw">def</span> <span class="fn">forward</span><span class="par">(</span><span class="var">self</span>, <span class="var">x</span><span class="par">)</span>:',
+                '        <span class="var">x</span> <span class="op">=</span> <span class="var">self</span>.<span class="fn">relu</span><span class="par">(</span><span class="var">self</span>.<span class="fn">bn1</span><span class="par">(</span><span class="var">self</span>.<span class="fn">layer1</span><span class="par">(</span><span class="var">x</span><span class="par">)))</span>',
+                '        <span class="var">x</span> <span class="op">=</span> <span class="var">self</span>.<span class="fn">dropout</span><span class="par">(</span><span class="var">x</span><span class="par">)</span>',
+                '        <span class="var">x</span> <span class="op">=</span> <span class="var">self</span>.<span class="fn">relu</span><span class="par">(</span><span class="var">self</span>.<span class="fn">layer2</span><span class="par">(</span><span class="var">x</span><span class="par">))</span>',
+                '        <span class="kw">return</span> <span class="var">self</span>.<span class="fn">softmax</span><span class="par">(</span><span class="var">self</span>.<span class="fn">layer3</span><span class="par">(</span><span class="var">x</span><span class="par">))</span>',
+                '',
+                '',
+                '<span class="cm"># Hyperparameters</span>',
+                '<span class="var">EPOCHS</span> <span class="op">=</span> <span class="num">150</span>',
+                '<span class="var">BATCH_SIZE</span> <span class="op">=</span> <span class="num">64</span>',
+                '<span class="var">LEARNING_RATE</span> <span class="op">=</span> <span class="num">0.001</span>',
+                '<span class="var">HIDDEN_DIM</span> <span class="op">=</span> <span class="num">256</span>',
+                '',
+                '<span class="var">model</span> <span class="op">=</span> <span class="cls">SentimentClassifier</span><span class="par">(</span>',
+                '    <span class="var">input_dim</span>=<span class="var">X_train</span>.<span class="var">shape</span>[<span class="num">1</span>],',
+                '    <span class="var">hidden_dim</span>=<span class="var">HIDDEN_DIM</span>,',
+                '    <span class="var">output_dim</span>=<span class="num">3</span>',
+                '<span class="par">)</span>',
+                '',
+                '<span class="var">criterion</span> <span class="op">=</span> <span class="cls">nn.CrossEntropyLoss</span><span class="par">()</span>',
+                '<span class="var">optimizer</span> <span class="op">=</span> <span class="var">optim</span>.<span class="cls">Adam</span><span class="par">(</span>',
+                '    <span class="var">model</span>.<span class="fn">parameters</span><span class="par">()</span>,',
+                '    <span class="var">lr</span>=<span class="var">LEARNING_RATE</span>,',
+                '    <span class="var">weight_decay</span>=<span class="num">1e-5</span>',
+                '<span class="par">)</span>',
+                '',
+                '',
+                '<span class="cm"># Training loop</span>',
+                '<span class="var">train_losses</span> <span class="op">=</span> []',
+                '<span class="var">val_accuracies</span> <span class="op">=</span> []',
+                '',
+                '<span class="kw">for</span> <span class="var">epoch</span> <span class="kw">in</span> <span class="fn">range</span><span class="par">(</span><span class="var">EPOCHS</span><span class="par">)</span>:',
+                '    <span class="var">model</span>.<span class="fn">train</span><span class="par">()</span>',
+                '    <span class="var">running_loss</span> <span class="op">=</span> <span class="num">0.0</span>',
+                '',
+                '    <span class="kw">for</span> <span class="var">batch_X</span>, <span class="var">batch_y</span> <span class="kw">in</span> <span class="var">train_loader</span>:',
+                '        <span class="var">optimizer</span>.<span class="fn">zero_grad</span><span class="par">()</span>',
+                '        <span class="var">outputs</span> <span class="op">=</span> <span class="fn">model</span><span class="par">(</span><span class="var">batch_X</span><span class="par">)</span>',
+                '        <span class="var">loss</span> <span class="op">=</span> <span class="fn">criterion</span><span class="par">(</span><span class="var">outputs</span>, <span class="var">batch_y</span><span class="par">)</span>',
+                '        <span class="var">loss</span>.<span class="fn">backward</span><span class="par">()</span>',
+                '        <span class="var">optimizer</span>.<span class="fn">step</span><span class="par">()</span>',
+                '        <span class="var">running_loss</span> <span class="op">+=</span> <span class="var">loss</span>.<span class="fn">item</span><span class="par">()</span>',
+                '',
+                '    <span class="var">avg_loss</span> <span class="op">=</span> <span class="var">running_loss</span> / <span class="fn">len</span><span class="par">(</span><span class="var">train_loader</span><span class="par">)</span>',
+                '    <span class="var">train_losses</span>.<span class="fn">append</span><span class="par">(</span><span class="var">avg_loss</span><span class="par">)</span>',
+                '',
+                '    <span class="cm"># Validation</span>',
+                '    <span class="var">model</span>.<span class="fn">eval</span><span class="par">()</span>',
+                '    <span class="kw">with</span> <span class="var">torch</span>.<span class="fn">no_grad</span><span class="par">()</span>:',
+                '        <span class="var">val_out</span> <span class="op">=</span> <span class="fn">model</span><span class="par">(</span><span class="var">X_test_tensor</span><span class="par">)</span>',
+                '        <span class="var">_, predicted</span> <span class="op">=</span> <span class="var">torch</span>.<span class="fn">max</span><span class="par">(</span><span class="var">val_out</span>, <span class="num">1</span><span class="par">)</span>',
+                '        <span class="var">accuracy</span> <span class="op">=</span> <span class="par">(</span><span class="var">predicted</span> == <span class="var">y_test_tensor</span><span class="par">)</span>.<span class="fn">sum</span><span class="par">()</span> / <span class="fn">len</span><span class="par">(</span><span class="var">y_test_tensor</span><span class="par">)</span>',
+                '        <span class="var">val_accuracies</span>.<span class="fn">append</span><span class="par">(</span><span class="var">accuracy</span><span class="par">)</span>',
+                '',
+                '    <span class="kw">if</span> <span class="par">(</span><span class="var">epoch</span> + <span class="num">1</span><span class="par">)</span> % <span class="num">10</span> == <span class="num">0</span>:',
+                '        <span class="fn">print</span><span class="par">(</span><span class="str">f"Epoch [{epoch+1}/{EPOCHS}]"</span>',
+                '              <span class="str">f" Loss: {avg_loss:.4f}"</span>',
+                '              <span class="str">f" Acc: {accuracy:.4f}"</span><span class="par">)</span>',
+                '',
+                '',
+                '<span class="cm"># Plot training results</span>',
+                '<span class="var">fig</span>, <span class="par">(</span><span class="var">ax1</span>, <span class="var">ax2</span><span class="par">)</span> <span class="op">=</span> <span class="var">plt</span>.<span class="fn">subplots</span><span class="par">(</span><span class="num">1</span>, <span class="num">2</span>, <span class="var">figsize</span>=<span class="par">(</span><span class="num">14</span>, <span class="num">5</span><span class="par">))</span>',
+                '<span class="var">ax1</span>.<span class="fn">plot</span><span class="par">(</span><span class="var">train_losses</span>, <span class="var">color</span>=<span class="str">"#00d4ff"</span><span class="par">)</span>',
+                '<span class="var">ax1</span>.<span class="fn">set_title</span><span class="par">(</span><span class="str">"Training Loss"</span><span class="par">)</span>',
+                '<span class="var">ax2</span>.<span class="fn">plot</span><span class="par">(</span><span class="var">val_accuracies</span>, <span class="var">color</span>=<span class="str">"#28c840"</span><span class="par">)</span>',
+                '<span class="var">ax2</span>.<span class="fn">set_title</span><span class="par">(</span><span class="str">"Validation Accuracy"</span><span class="par">)</span>',
+                '<span class="var">plt</span>.<span class="fn">tight_layout</span><span class="par">()</span>',
+                '<span class="var">plt</span>.<span class="fn">savefig</span><span class="par">(</span><span class="str">"results/training_curves.png"</span><span class="par">)</span>',
+                '',
+                '<span class="fn">print</span><span class="par">(</span><span class="str">"Training complete. Model saved."</span><span class="par">)</span>',
+            ];
+
+            // Duplicate lines for seamless scroll loop
+            const allLines = [...codeLines, ...codeLines];
+            const codeEl = document.getElementById('codeContent');
+            const lineNumEl = document.getElementById('lineNumbers');
+
+            codeEl.innerHTML = allLines.join('\n');
+
+            let nums = '';
+            for (let i = 1; i <= allLines.length; i++) {
+                nums += ((i - 1) % codeLines.length + 1) + '\n';
+            }
+            lineNumEl.textContent = nums;
+
+            // Sync line number scroll with code scroll animation
+            lineNumEl.style.animation = 'codeScroll 40s linear infinite';
         })();
 
         // ======================== TYPING EFFECT ========================

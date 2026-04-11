@@ -1241,6 +1241,166 @@
             color: var(--text-secondary);
         }
 
+        /* ======================== RESUME / CV VIEWER ======================== */
+        .resume-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .resume-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .resume-tab {
+            padding: 10px 26px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 50px;
+            color: var(--text-secondary);
+            font-family: var(--font);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .resume-tab i {
+            font-size: 0.95rem;
+        }
+
+        .resume-tab:hover {
+            border-color: var(--cyan);
+            color: var(--cyan);
+        }
+
+        .resume-tab.active {
+            background: var(--gradient-cyan);
+            color: var(--bg-primary);
+            border-color: transparent;
+            box-shadow: 0 4px 18px rgba(0, 212, 255, 0.35);
+        }
+
+        .resume-actions {
+            display: flex;
+            justify-content: center;
+            gap: 14px;
+            margin-bottom: 24px;
+            flex-wrap: wrap;
+        }
+
+        .resume-btn {
+            padding: 10px 22px;
+            background: transparent;
+            color: var(--cyan);
+            border: 1px solid var(--cyan);
+            border-radius: 8px;
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .resume-btn:hover {
+            background: var(--cyan-dim);
+            box-shadow: 0 4px 20px rgba(0, 212, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .resume-viewer {
+            position: relative;
+            width: 100%;
+            height: 820px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .resume-viewer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-cyan);
+            z-index: 2;
+        }
+
+        .resume-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: none;
+            background: #fff;
+        }
+
+        .resume-frame.active {
+            display: block;
+        }
+
+        .resume-fallback {
+            display: none;
+            padding: 60px 30px;
+            text-align: center;
+            color: var(--text-secondary);
+        }
+
+        .resume-fallback.active {
+            display: block;
+        }
+
+        .resume-fallback i {
+            font-size: 2.5rem;
+            color: var(--cyan);
+            margin-bottom: 18px;
+        }
+
+        .resume-fallback h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+
+        .resume-fallback p {
+            font-size: 0.92rem;
+            max-width: 420px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .resume-viewer {
+                height: 600px;
+            }
+
+            .resume-tab {
+                padding: 9px 20px;
+                font-size: 0.78rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .resume-viewer {
+                height: 500px;
+            }
+        }
+
         /* ======================== FOOTER ======================== */
         .footer {
             position: relative;
@@ -1391,6 +1551,7 @@
             <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
             <li><a href="#projects" onclick="closeMenu()">Projects</a></li>
             <li><a href="#education" onclick="closeMenu()">Education</a></li>
+            <li><a href="#resume" onclick="closeMenu()">Resume</a></li>
             <li><a href="#contact" onclick="closeMenu()">Contact</a></li>
         </ul>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -1447,7 +1608,7 @@
             </div>
             <p class="hero-description">
                 Passionate about AI and its transformative power. Building intelligent systems
-                that generate insights and drive innovation in data science, NLP, and computer vision.
+                that generate insights and drive innovation across NLP, LLMs, OSINT, and computer vision.
             </p>
             <div class="hero-buttons">
                 <a href="#contact" class="btn-primary">Get In Touch</a>
@@ -1582,11 +1743,20 @@
                     </div>
                     <div class="skill-card">
                         <div class="skill-info">
-                            <span class="skill-name">NLP (BRILL, Ontologies, Stemming)</span>
-                            <span class="skill-percent">78%</span>
+                            <span class="skill-name">NLP (LLM, RAG, HuggingFace, LangChain)</span>
+                            <span class="skill-percent">88%</span>
                         </div>
                         <div class="skill-bar-track">
-                            <div class="skill-bar-fill" data-width="78"></div>
+                            <div class="skill-bar-fill" data-width="88"></div>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-info">
+                            <span class="skill-name">Image &amp; Signal Processing (MATLAB)</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar-track">
+                            <div class="skill-bar-fill" data-width="75"></div>
                         </div>
                     </div>
                     <div class="skill-card">
@@ -1647,11 +1817,11 @@
                         <div class="skill-circle-wrapper">
                             <svg viewBox="0 0 80 80">
                                 <circle class="circle-bg" cx="40" cy="40" r="35"></circle>
-                                <circle class="circle-fill" cx="40" cy="40" r="35" data-percent="75"></circle>
+                                <circle class="circle-fill" cx="40" cy="40" r="35" data-percent="78"></circle>
                             </svg>
-                            <span class="skill-circle-percent">75%</span>
+                            <span class="skill-circle-percent">78%</span>
                         </div>
-                        <div class="skill-circle-label">C</div>
+                        <div class="skill-circle-label">C++</div>
                     </div>
                     <div class="skill-circle-card">
                         <div class="skill-circle-wrapper">
@@ -1691,7 +1861,7 @@
                             </svg>
                             <span class="skill-circle-percent">72%</span>
                         </div>
-                        <div class="skill-circle-label">JEE/JSP</div>
+                        <div class="skill-circle-label">Android Studio</div>
                     </div>
                     <div class="skill-circle-card">
                         <div class="skill-circle-wrapper">
@@ -1841,33 +2011,34 @@
                 <div class="project-card fade-in">
                     <div class="project-icon"><i class="fas fa-globe"></i></div>
                     <h3>Moroccan Diplomatic Monitoring</h3>
-                    <p>Fine-tuned a large language model to produce multiple outputs for sentiment, category, and relevance of Morocco within diplomatic text content.</p>
+                    <p>A full OSINT system that scrapes news and articles to identify sentiment, category, and the relevance of Morocco using a fine-tuned LLaMA&nbsp;3 large language model.</p>
                     <div class="project-tags">
-                        <span class="project-tag">LLM Fine-tuning</span>
-                        <span class="project-tag">Sentiment Analysis</span>
+                        <span class="project-tag">LLaMA 3</span>
+                        <span class="project-tag">OSINT</span>
+                        <span class="project-tag">Fine-tuning</span>
                         <span class="project-tag">NLP</span>
+                    </div>
+                </div>
+                <div class="project-card fade-in">
+                    <div class="project-icon"><i class="fas fa-file-alt"></i></div>
+                    <h3>Complex OCR &amp; Document Extraction</h3>
+                    <p>End-to-end OCR system built on a fine-tuned Vision-Language Model (Gemma-3 4B) that extracts structured text, tables, and detailed metadata from complex scanned legal documents.</p>
+                    <div class="project-tags">
+                        <span class="project-tag">Gemma-3 4B</span>
+                        <span class="project-tag">VLM</span>
+                        <span class="project-tag">OCR</span>
+                        <span class="project-tag">Fine-tuning</span>
                     </div>
                 </div>
                 <div class="project-card fade-in">
                     <div class="project-icon"><i class="fas fa-language"></i></div>
-                    <h3>DushDarija AI Language Platform</h3>
-                    <p>An AI-powered platform using gamified experiences and chatbots to help people in Morocco easily learn Dutch through interactive and engaging methods.</p>
+                    <h3>DushDarija AI Language Learning</h3>
+                    <p>An educational platform that uses Retrieval-Augmented Generation (RAG) to deliver dynamic, context-aware German language instruction, combined with gamified elements tailored for Moroccan users.</p>
                     <div class="project-tags">
-                        <span class="project-tag">AI Chatbot</span>
+                        <span class="project-tag">RAG</span>
                         <span class="project-tag">Gamification</span>
-                        <span class="project-tag">Flask</span>
+                        <span class="project-tag">LLM</span>
                         <span class="project-tag">NLP</span>
-                    </div>
-                </div>
-                <div class="project-card fade-in">
-                    <div class="project-icon"><i class="fas fa-heartbeat"></i></div>
-                    <h3>Heart Disease Prediction</h3>
-                    <p>Development and evaluation of classification models including KNN, SVM, and RandomForest for accurate heart disease prediction from clinical data.</p>
-                    <div class="project-tags">
-                        <span class="project-tag">scikit-learn</span>
-                        <span class="project-tag">KNN</span>
-                        <span class="project-tag">SVM</span>
-                        <span class="project-tag">RandomForest</span>
                     </div>
                 </div>
             </div>
@@ -1888,7 +2059,7 @@
                     <div class="edu-details">
                         <h3>Master of Research in Computer Science &amp; AI</h3>
                         <h4>Faculty of Science - Ibn Tofail, Kenitra</h4>
-                        <p><i class="fas fa-calendar-alt"></i> 2024 - 2025</p>
+                        <p><i class="fas fa-calendar-alt"></i> Feb 2024 - Dec 2025</p>
                     </div>
                 </div>
                 <div class="education-card fade-in">
@@ -1896,7 +2067,7 @@
                     <div class="edu-details">
                         <h3>Professional Bachelor's in Computer Engineering</h3>
                         <h4>Polydisciplinary Faculty - Ibn Zohr, Taroudant</h4>
-                        <p><i class="fas fa-calendar-alt"></i> 2020 - 2021</p>
+                        <p><i class="fas fa-calendar-alt"></i> Feb 2020 - Sep 2021</p>
                     </div>
                 </div>
                 <div class="education-card fade-in">
@@ -1904,7 +2075,7 @@
                     <div class="edu-details">
                         <h3>Specialized Technician Diploma in Computer Networks</h3>
                         <h4>ISTA NTIC OFPPT, Beni Mellal</h4>
-                        <p><i class="fas fa-calendar-alt"></i> 2018 - 2020</p>
+                        <p><i class="fas fa-calendar-alt"></i> Sep 2018 - Sep 2020</p>
                     </div>
                 </div>
             </div>
@@ -1951,6 +2122,58 @@
                         <span class="lang-dot active"></span>
                         <span class="lang-dot active"></span>
                         <span class="lang-dot"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====================== RESUME / CV SECTION ====================== -->
+    <section id="resume">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>My <span class="accent">Resume</span></h2>
+                <p>View my CV in English or French, or download a copy</p>
+                <div class="section-line"></div>
+            </div>
+            <div class="resume-wrapper fade-in">
+                <div class="resume-tabs" role="tablist">
+                    <button class="resume-tab active" data-lang="en" onclick="switchResume('en')" role="tab" aria-selected="true">
+                        <i class="fas fa-flag"></i> English
+                    </button>
+                    <button class="resume-tab" data-lang="fr" onclick="switchResume('fr')" role="tab" aria-selected="false">
+                        <i class="fas fa-flag"></i> Français
+                    </button>
+                </div>
+                <div class="resume-actions">
+                    <a href="EL_MAHDI_ATMANI_EN.pdf" download class="resume-btn" id="resumeDownload">
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                    <a href="EL_MAHDI_ATMANI_EN.pdf" target="_blank" rel="noopener" class="resume-btn" id="resumeOpen">
+                        <i class="fas fa-external-link-alt"></i> Open in new tab
+                    </a>
+                </div>
+                <div class="resume-viewer">
+                    <iframe
+                        id="resumeFrameEn"
+                        class="resume-frame active"
+                        src="EL_MAHDI_ATMANI_EN.pdf#view=FitH&toolbar=1"
+                        title="EL MAHDI ATMANI - CV (English)"
+                        loading="lazy">
+                    </iframe>
+                    <iframe
+                        id="resumeFrameFr"
+                        class="resume-frame"
+                        title="EL MAHDI ATMANI - CV (Français)"
+                        loading="lazy">
+                    </iframe>
+                    <div class="resume-fallback" id="resumeFallbackFr">
+                        <i class="fas fa-file-pdf"></i>
+                        <h3>French version coming soon</h3>
+                        <p>The French version of the CV is not available yet. In the meantime, you can view the English version or download it below.</p>
+                        <a href="EL_MAHDI_ATMANI_EN.pdf" download class="resume-btn">
+                            <i class="fas fa-download"></i> Download English CV
+                        </a>
                     </div>
                 </div>
             </div>
@@ -2242,11 +2465,11 @@
         // ======================== TYPING EFFECT ========================
         (function() {
             const phrases = [
-                'AI & Machine Learning Engineer',
-                'Data Science Enthusiast',
-                'Computer Vision Developer',
+                'AI Engineer',
+                'Data Scientist',
                 'NLP & LLM Specialist',
-				'OSINT Planner'
+                'OSINT Researcher',
+                'Computer Vision Developer'
             ];
             const el = document.getElementById('typingText');
             let phraseIndex = 0;
@@ -2303,6 +2526,62 @@
         function closeMenu() {
             document.getElementById('navLinks').classList.remove('active');
             document.getElementById('hamburger').classList.remove('active');
+        }
+
+        // ======================== RESUME LANGUAGE SWITCHER ========================
+        const RESUME_FILES = {
+            en: 'EL_MAHDI_ATMANI_EN.pdf',
+            fr: 'EL_MAHDI_ATMANI_FR.pdf'
+        };
+
+        function switchResume(lang) {
+            const tabs = document.querySelectorAll('.resume-tab');
+            const frameEn = document.getElementById('resumeFrameEn');
+            const frameFr = document.getElementById('resumeFrameFr');
+            const fallbackFr = document.getElementById('resumeFallbackFr');
+            const dlBtn = document.getElementById('resumeDownload');
+            const openBtn = document.getElementById('resumeOpen');
+            const file = RESUME_FILES[lang];
+
+            tabs.forEach(function(t) {
+                const isActive = t.getAttribute('data-lang') === lang;
+                t.classList.toggle('active', isActive);
+                t.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            // Reset all viewers
+            frameEn.classList.remove('active');
+            frameFr.classList.remove('active');
+            fallbackFr.classList.remove('active');
+
+            if (lang === 'en') {
+                frameEn.classList.add('active');
+                dlBtn.href = RESUME_FILES.en;
+                openBtn.href = RESUME_FILES.en;
+                return;
+            }
+
+            // French: try to load the FR pdf. If it 404s, show the fallback.
+            fetch(RESUME_FILES.fr, { method: 'HEAD' })
+                .then(function(res) {
+                    if (res.ok) {
+                        if (!frameFr.getAttribute('src')) {
+                            frameFr.setAttribute('src', RESUME_FILES.fr + '#view=FitH&toolbar=1');
+                        }
+                        frameFr.classList.add('active');
+                        dlBtn.href = RESUME_FILES.fr;
+                        openBtn.href = RESUME_FILES.fr;
+                    } else {
+                        fallbackFr.classList.add('active');
+                        dlBtn.href = RESUME_FILES.en;
+                        openBtn.href = RESUME_FILES.en;
+                    }
+                })
+                .catch(function() {
+                    fallbackFr.classList.add('active');
+                    dlBtn.href = RESUME_FILES.en;
+                    openBtn.href = RESUME_FILES.en;
+                });
         }
 
         // ======================== INTERSECTION OBSERVER - FADE IN ========================

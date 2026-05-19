@@ -1168,6 +1168,15 @@
             transition: all 0.3s ease;
         }
 
+        .project-thumb-wide {
+            grid-column: 1 / -1;
+            aspect-ratio: 16 / 9;
+        }
+
+        .project-thumb-wide img {
+            object-fit: contain;
+        }
+
         .project-thumb img {
             width: 100%;
             height: 100%;
@@ -2353,16 +2362,30 @@
                         <span class="project-tag">NLP</span>
                     </div>
                 </div>
-                <div class="project-card fade-in">
+                <div class="project-card project-card-featured fade-in">
                     <div class="project-icon"><i class="fas fa-language"></i></div>
-                    <h3>Deutsch b'Darija AI Learning Platform</h3>
-                    <p>An educational platform using Retrieval-Augmented Generation (RAG) to deliver dynamic, context-aware German language instruction combined with gamified elements tailored for Moroccan users.</p>
+                    <h3>Deutsch b'Darija &mdash; AI German Teacher</h3>
+                    <div class="project-gallery">
+                        <button type="button" class="project-thumb project-thumb-wide" data-img="deutsch-bdarija/deutsch-bdarija.png" data-caption="Deutsch b'Darija &mdash; chat interface answering German questions in Moroccan Darija">
+                            <img src="deutsch-bdarija/deutsch-bdarija.png" alt="Deutsch b'Darija UI" loading="lazy">
+                            <span class="thumb-label">Chat interface</span>
+                        </button>
+                    </div>
+                    <p>أستاذ الألمانية بالدارجة &mdash; a RAG-powered tutor that teaches German entirely in Moroccan Darija. Drop in any German textbook PDF, ask questions in Darija (or German/French), and get explanations in fluent Moroccan dialect. Built on a multilingual MiniLM embedder, ChromaDB vector store with cosine search, PyMuPDF for PDF extraction (800-char chunks with 150-char overlap), and Claude as the answer generator with a Darija-tuned system prompt. Streamlit UI for fast iteration plus a separate React/Vite frontend, all containerized via Docker Compose.</p>
                     <div class="project-tags">
                         <span class="project-tag">RAG</span>
-                        <span class="project-tag">Gamification</span>
-                        <span class="project-tag">LLM</span>
-                        <span class="project-tag">NLP</span>
+                        <span class="project-tag">ChromaDB</span>
+                        <span class="project-tag">Claude API</span>
+                        <span class="project-tag">PyMuPDF</span>
+                        <span class="project-tag">MiniLM Embeddings</span>
+                        <span class="project-tag">Streamlit</span>
+                        <span class="project-tag">React/Vite</span>
+                        <span class="project-tag">Docker Compose</span>
                     </div>
+                    <span class="project-link locked" role="note" aria-label="Source code is confidential" title="Source code is confidential">
+                        <i class="fas fa-lock"></i> View on GitHub
+                        <span class="lock-tag"><i class="fas fa-shield-halved"></i> Confidential</span>
+                    </span>
                 </div>
             </div>
         </div>

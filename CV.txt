@@ -1,0 +1,88 @@
+EL MAHDI ATMANI
+AI Engineering | Data Scientist | ETL
+Email: mahdiaatmani@gmail.com
+Phone: +212648073768
+Location: Rabat, Morocco
+LinkedIn: https://www.linkedin.com/in/el-mahdi-atmani/
+Github: https://github.com/mahdiatmani/
+Portfolio: https://mahdiatmani.github.io/
+
+PROFILE
+Specialist in AI Engineering and Data Science with experience building end-to-end machine learning systems and scalable data pipelines. Proven expertise in fine-tuning Large Language Models and Vision-Language Models to drive intelligent automation and solve complex technical challenges.
+
+SKILLS
+Cloud & Computing: 
+- Cloud Platforms: DigitalOcean, AWS, Wasabi, OpenStack
+- Parallel Computing: OpenMP for algorithm optimization
+
+Databases & Data Management:
+- Databases: SQL, Oracle, NoSQL, MongoDB, DynamoDB, neo4j, Snowflake
+
+Programming:
+- Programming Languages: Python, C++, Java, Android Studio, XML
+- Web Development: JSP, HTML, CSS, JavaScript, Flask, JEE
+
+Artificial Intelligence & Data Science:
+- Machine Learning: Python (scikit-learn, NumPy, pandas, Matplotlib), Performance measurement
+- Deep Learning: TensorFlow, PyTorch, Keras
+- Neural Networks: CNN, RNN, NN
+- Computer Vision: YOLO, OpenCV
+- Natural Language Processing: RAG, fine-tuning, Hugging Face, spaCy, NLTK, or LangChain
+- Image & Signal Processing: MATLAB
+- Data Visualization & Analytics: Power BI, Matplotlib
+- Automation: n8n, scripts
+- AI/LLMs: LangChain/LangGraph, Multi-Agent Systems, RAG Architectures, LLMs(Claude, Gemini, OpenAI, Mistral...)
+
+PROFESSIONAL EXPERIENCE
+
+AI/NLP Engineer Intern
+Moroccan Parliament | Rabat, Morocco | Apr/2025 - Nov/2025
+Intelligent System for International Diplomatic Watch
+- Built an end-to-end intelligent OSINT platform automating diplomatic data collection across 12 international media sources and APIs.
+- Fine-tuned a Llama 3.1 (8B) model using PEFT/LoRA (13M parameters) for domain-specific NLP tasks, achieving 98.39% accuracy in relevance classification and 96.77% accuracy in multi-dimensional sentiment analysis.
+- Optimized local GPU deployment by implementing 4-bit quantization, reducing the model's memory footprint by 75% (from 16GB to 4GB) while maintaining high inference speeds.
+- Implemented a full-stack solution with a Next.js/React frontend and a Python backend, integrating Playwright for robust web scraping and TinyDB to process and categorize diplomatic events into 52 thematic areas.
+- Technologies: Llama 3.1, PEFT/LoRA, PyTorch, LangChain, Ollama, Next.js, Playwright, Python, TinyDB
+
+AI Training Specialist & NLP Evaluator
+Outlier.ai : Freelance | Rabat, Morocco | Jan/2025 - Present
+LLM Fine-Tuning and Model Alignment
+- Conducted rigorous evaluation and validation of Large Language Models (LLMs) to enhance instruction-following capabilities, logical reasoning, and factual accuracy.
+- Applied Reinforcement Learning from Human Feedback (RLHF) methodologies by analyzing and grading AI outputs for coherence, context retention, and safety alignment.
+- Designed and executed complex, multi-turn prompting strategies (including edge-case testing) to identify system vulnerabilities, mitigate hallucinations, and establish model boundaries.
+- Curated, structured, and validated high-quality, domain-specific training datasets to support the continuous fine-tuning of foundational generative models.
+- Technologies: LLMs, RLHF, Prompt Engineering, NLP, Model Alignment, Data Quality Assurance
+
+Dev Intern
+Regional Hospital | Beni Mellal, Morocco | Jun/2021 - Jul/2021
+- Developed a comprehensive patient management application to digitize medical records, streamline admissions, and improve administrative workflow efficiency for healthcare professionals.
+- Provided responsive IT support and technical problem-solving for hospital staff, ensuring the continuous and reliable operation of critical hardware and software systems.
+- Technologies: Java, JavaFX, MySQL
+
+IT Intern
+Ministry of Justice | Beni Mellal, Morocco | Mar/2020 - Mar/2020
+- Developed a virtualization solution using ESXi.
+
+EDUCATION
+
+Master of Research in Computer Science and Artificial Intelligence
+Faculty of Science - Ibn Tofail | Kenitra, Morocco | Feb/2024 - Dec/2025
+
+Professional Bachelor's Degree in Computer Engineering
+Polydisciplinary Faculty - Ibn Zohr | Taroudant, Morocco | Feb/2020 - Sep/2021
+
+PROJECTS
+
+Complex OCR & Document Extraction
+- Developed an end-to-end Optical Character Recognition system utilizing a fine-tuned Vision-Language Model (Gemma-3 4B) capable of extracting structured text, tables, and detailed metadata from complex scanned legal documents.
+
+Web Scraping AI Agent
+- Developed an AI agent capable of identifying news content across websites, scraping full article links, and extracting structured data from those articles.
+
+Deutsch b'Darija AI Language Learning Platform
+- Developed an educational platform utilizing Retrieval-Augmented Generation (RAG) to generate dynamic, context-aware German language instruction combined with gamified elements for Moroccan users.
+
+LANGUAGES
+- Arabic: Native
+- French: Fluent
+- English: Fluent

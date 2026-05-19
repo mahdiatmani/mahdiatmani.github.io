@@ -1094,6 +1094,33 @@
             box-shadow: 0 0 16px var(--cyan-glow);
         }
 
+        .project-link.locked {
+            background: rgba(255, 255, 255, 0.03);
+            border-color: var(--border);
+            color: var(--text-dim);
+            cursor: not-allowed;
+            position: relative;
+        }
+
+        .project-link.locked:hover {
+            background: rgba(255, 255, 255, 0.03);
+            color: var(--text-dim);
+            box-shadow: none;
+            border-color: var(--border);
+        }
+
+        .project-link.locked .lock-tag {
+            margin-left: 6px;
+            padding: 2px 8px;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            border: 1px solid var(--text-dim);
+            border-radius: 4px;
+            color: var(--text-secondary);
+        }
+
         .project-card-featured {
             grid-column: 1 / -1;
         }
@@ -2299,6 +2326,10 @@
                         <span class="project-tag">TinyDB</span>
                         <span class="project-tag">OSINT</span>
                     </div>
+                    <span class="project-link locked" role="note" aria-label="Source code is confidential" title="Source code is confidential">
+                        <i class="fas fa-lock"></i> View on GitHub
+                        <span class="lock-tag"><i class="fas fa-shield-halved"></i> Confidential</span>
+                    </span>
                 </div>
                 <div class="project-card fade-in">
                     <div class="project-icon"><i class="fas fa-file-alt"></i></div>
